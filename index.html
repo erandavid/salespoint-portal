@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="./assets/favicon.ico">
+    <link rel='stylesheet' href="normalize.css">
+    <link rel='stylesheet' id='google-earlyaccess-2-css' href='https://fonts.googleapis.com/earlyaccess/notosanshebrew.css?ver=6.4.5' media='all' />
+    <title>SalesPoint</title>
+    <style>
+        :root {
+        --main-bg-color: #F4F5F9;
+        --navbar-bg-color: #390571;
+        --highlighted-text-bg: #8C42DF;
+        --table-header-bg: #ECE6F1;
+        --table-header-text:#441379;
+        --disabled-btn-color: #f5f5f5;
+        }
+        img {
+            display: block;
+        }
+        body {
+            font-family: "Calibri", "sans-serif";
+            margin: 0;
+            padding: 0;
+        }
+        .text-header {
+            font-family: "Noto Sans Hebrew", Sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+        }
+        .text-subheader {
+            font-family: "Noto Sans Hebrew", Sans-serif;
+            font-size: 1.5rem;
+            font-weight: 400;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 4rem;
+        }
+        header img {
+            height: 100%;
+        }
+        .header-links {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 100%;
+        }
+        .header-links a {
+            cursor: pointer;
+            font-size: large;
+        }
+        .hero {
+            position: relative;
+        }
+        .hero button {
+            cursor: pointer;
+            position: absolute;
+            top: 60%;
+            height: 3rem;
+            width: 30%;
+            margin-right: min(2rem, 2%);
+            color: white;
+            font-size: large;
+            border-radius: 12px;
+            border: none;
+            background: linear-gradient(56deg, #45c4f9, #7d09ff 50.33%, #ff0be5);
+            box-shadow: 0 4px 4px 0 rgba(87, 75, 172, .15);
+          }
+
+        .hero img {
+            width: 100%;
+            display: block;
+         }
+         .login-button {
+            cursor: pointer;
+            margin-inline: 1rem;
+            padding-block: 0.5rem;
+            padding-inline: 1rem;
+            border-radius: 12px;
+            border: white;
+            background-color: var(--navbar-bg-color);
+            color: white;
+            font-size: large;            
+         }
+        section {
+            margin-bottom: 2rem;
+        }
+        .advantages {
+            background-color: var(--navbar-bg-color);
+            border-radius: 15px;
+            margin-inline: 2rem;
+            padding: 1rem;
+            color: white;
+            text-align: center;
+        }
+        .advantages img {
+            width: 90%;
+            margin: auto;
+            margin-block: 2rem;
+        }
+        .benefits {
+            display: flex; 
+            margin: auto;
+            justify-content: space-evenly;
+            align-items: center;
+            margin-block: 4rem;
+            width: 90%;
+            column-gap: 5rem;
+            row-gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .benefits > div {
+            border: 2px solid white;
+            border-radius: 10px;
+            background-color: var(--highlighted-text-bg);
+            padding: 0.5rem;
+            width: 12rem;
+            height: 10rem;
+            font-size: 1rem;
+            font-weight: 400;
+        }
+        .benefits img {
+            width: 3rem;
+            filter: brightness(0) saturate(100%) invert(89%) sepia(100%) saturate(1%) hue-rotate(181deg) brightness(113%) contrast(102%);
+        }
+        .how-it-works {
+            text-align: center;
+        }
+        .how-it-works img {
+            margin-block: 2rem;
+            margin-inline: auto;
+            min-width: 70%;
+            max-width: 100%;
+        }
+
+        .testimonials {
+            padding-block: 1rem;
+            padding-inline: 5%;
+            margin-top: 1rem;
+            background-color: #f1f1f1;
+            text-align: center;
+        }
+        .testimonials > div {
+            margin-bottom: 1rem;
+        }
+
+        .testimonial {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+            font-family: "Noto Sans Hebrew", Sans-serif;
+            font-size: 1.5rem;
+            font-weight: 400;
+            column-gap: 1rem;
+        }
+        .testimonial img {
+            border-radius: 50%;
+            padding: 1rem;
+            background-color: white;
+            width: 15rem;
+            aspect-ratio: 1/1;
+        }
+        .testimonial p {
+            width: clamp(60%, calc(90vw - 50rem), 100%);
+        }
+        
+        .faq { 
+            text-align: center;
+        }
+        .faq > div:first-child {
+            margin-bottom: 1rem;
+        }
+
+        .faq-box { 
+            text-align: right;
+            display: flex;
+            flex-direction: column;
+            row-gap: 5px;
+            margin-inline: 5%;
+            font-family: "Noto Sans Hebrew", Sans-serif;
+            font-size: 1rem;
+            font-weight: 400;
+            row-gap: 1.5rem;
+        }
+
+        .faq-box div div:first-child {
+            font-weight: bold;
+            background-color: var(--navbar-bg-color);
+            color: white;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            padding: 1rem;
+        }
+        .faq-box div div:last-child {
+            border: 1px, solid, var(--navbar-bg-color);
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+            padding: 1rem;
+        }
+
+        .contact {
+            text-align: center;
+            background-color: var(--navbar-bg-color);
+            color: white;
+            margin-inline: auto;
+            padding-block: 2rem;
+        }
+
+        .contact img {
+            height: 3rem;
+            margin-inline: auto;
+        }
+
+        @media (max-width: 768px) {
+            .header-links {
+                display: none;
+            }
+            .hide-on-small {
+                display: none;
+            }
+        }
+        @media (min-width: 768px) {
+            .hide-on-big {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="./assets/logo-blue.png">
+        <div class="header-links">
+            <a href="#how-it-works">איך זה עובד</a>
+            <a href="#faq">שאלות נפוצות</a>
+            <a href="#contact">צור קשר</a>
+        </div>
+        <button class="login-button" onclick="window.location='https://app.salespoint.co.il'">כניסה</button>
+    </header>
+
+    <section class="hero">
+        <img src="./assets/hero.png" alt="Company Logo">
+        <button onclick="window.location='https://app.salespoint.co.il/create-account'">הצטרף עכשיו! <b>100% חינם</b></button>
+    </section>
+
+    <section class="advantages">
+        <div class="text-header">מהיום מנהלים רכש באופן חכם</div>
+        <br />
+        <div class="text-subheader">סיילספויינט מאפשרת לארגון לנהל את בקשות הרכש באופן יעיל, להזמין ספקים להציע הצעות ולחסוך כסף לארגון</text-subheader>
+        <div class="benefits">
+            <div>
+                <img src="./assets/thumbs-up-regular.svg">
+                <div>ניהול ומעקב ממוחשב אחר תהליך הרכש</div>
+            </div>
+            <div>
+                <img src="./assets/thumbs-up-regular.svg">
+                <div>קבלת הצעות ממגוון ספקים</div>
+            </div>
+            <div>
+                <img src="./assets/thumbs-up-regular.svg">
+                <div>תקשורת פשוטה ואוטומטית עם ספקים</div>
+            </div>
+        </div>
+        <img src="./assets/screenshoot.png" >
+    </section>
+
+    <section class="section how-it-works" id="how-it-works">
+        <div class="text-header">איך זה עובד?</div>
+        <img src="./assets/how-it-works.gif">
+    </section>
+
+    <section class="section testimonials">
+        <div class="text-header">מה אומרים הלקוחות שלנו?</div>
+        <div class="testimonial">
+            <img src="./assets/neta.jpeg">
+            <p>"המערכת של סיילפויינט עשתה לנו סדר בתהליך הרכש שהתנהל עד אז באמיילים. המערכת חסכה לנו זמן יקר בעידכון הספקים בכל שינוי המתבצע בפרטי הבקשה",  <b>נטע לוי, מנהלת אגף כח אדם, Get SAT Ltd</b></p>
+        </div>
+        <div class="testimonial hide-on-small">
+            <p>"באמצעות המערכת של סיילפויינט אנו מקבלים מגוון הצעות איכותיות לבקשות הספציפיות שלנו מספקים שלא עבדנו עימם בעבר", <b>איילת דוד, מנהלת אדמינסטרטיבית, Experience English</b></p>
+            <img src="./assets/ayelet.jpg">
+        </div>
+        <div class="testimonial hide-on-big">
+            <img src="./assets/ayelet.jpg">
+            <p>"באמצעות המערכת של סיילפויינט אנו מקבלים מגוון הצעות איכותיות לבקשות הספציפיות שלנו מספקים שלא עבדנו עימם בעבר", <b>איילת דוד, מנהלת אדמינסטרטיבית, Experience English</b></p>
+        </div>
+    </section>
+
+    <section class="section faq" id="faq">
+        <div class="text-header">שאלות נפוצות</div>
+        <div class="faq-box">
+            <div>
+                <div>כמה זה עולה לי?</div>
+                <div>השירות חינם הן ללקוח והן לספק! ספקים יכולים לרכוש מנוי כדי לחפש ולקבל התראות על בקשות בתחומם.</div>
+            </div>
+            <div>
+                <div>אילו בקשות רכש ניתן לנהל במערכת?</div>
+                <div>אין מגבלה לגבי סוג הבקשות אותם ניתן לנהל. המערכת מציעה תבנית של כתב כמויות או תבנית טקסט חופשי לתיאור הבקשה</div>
+            </div>
+            <div>
+                <div>האם העסקה מתבצעת דרך המערכת?</div>
+                <div>לא. המערכת רק מקשרת בין הארגון לספקים. לאחר הזכייה, הארגון מתקשר עם הספק ישירות להשלמת העסקה.</div>
+            </div>
+            <div>
+                <div>האם ניתן לתקשר ישירות עם הספק?</div>
+                <div>בודאי. הארגון יכול לבחור לתקשר ישרות עם הספק בכל שלב.</div>
+            </div>
+            <div>
+                <div>מה אם לארגון יש מספר עובדים שמתעסקים ברכש?</div>
+                <div>אין בעיה. ניתן להגדיר מספר חברים בארגון עם הרשאות שונות.</div>
+            </div>
+            <div>
+                <div>האם המערכת שומרת את היסטוריית הבקשות של הארגון?</div>
+                <div>בהחלט! המערכת מאפשרת גישה לבקשות שהסתיימו ויכולת לבצע הערכת ספקים, תהליך שנדרש על ידי ISO להתבצע בתדירות שנתית.</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section contact" id="contact">
+        <div class="text-header">קל להיות איתנו בקשר</div>
+        <p  class="text-subheader">מעוניין לקבל מידע נוסף? מחלקת השירות והתמיכה זמינה עבורך במייל:</p>
+        <p  class="text-subheader">support@salespoint.co.il</p>
+        <img src="./assets/logo.png">
+    </section>
+</body>
+</html>
+
