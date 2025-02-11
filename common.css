@@ -1,0 +1,61 @@
+:root {
+    --main-bg-color: #F4F5F9;
+    --navbar-bg-color: #390571;
+    --highlighted-text-bg: #8C42DF;
+    --table-header-bg: #ECE6F1;
+    --table-header-text: #441379;
+    --disabled-btn-color: #f5f5f5;
+}
+
+body {
+    font-family: "Calibri", "sans-serif";
+    margin: 0;
+    padding: 0;
+    counter-reset: section;
+}
+
+.wrapper {
+    padding-inline: 2rem;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 4rem;
+}
+
+header img {
+    height: 100%;
+    display: block;
+}
+
+.text-header {
+    font-family: "Noto Sans Hebrew", Sans-serif;
+    font-size: 2rem;
+    font-weight: 800;
+    margin-block: 1rem;
+}
+
+.text-subheader {
+    font-family: "Noto Sans Hebrew", Sans-serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+aside {
+    font-family: "Noto Sans Hebrew", Sans-serif;
+    font-size: 1.5rem;
+    font-weight: 400;            
+}
+
+aside::before {
+    counter-increment: section;
+    content: counter(section) ". ";
+}
+
+section {
+    padding-right: 1rem;
+}
+section::before {
+    content: 'o  ';
+}
